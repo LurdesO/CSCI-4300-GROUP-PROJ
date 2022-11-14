@@ -23,6 +23,10 @@ const NewPlace = () => {
       address: {
         value: '',
         isValid: false
+      },
+      link: {
+        value: '',
+        isValid: false
       }
     },
     false
@@ -30,7 +34,7 @@ const NewPlace = () => {
 
   const placeSubmitHandler = event => {
     event.preventDefault();
-    console.log(formState.inputs); // send this to the backend!
+    console.log(formState.inputs);
   };
 
   return (
@@ -58,6 +62,14 @@ const NewPlace = () => {
         label="Address"
         validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid address."
+        onInput={inputHandler}
+      />
+      <Input
+        id="link"
+        element="input"
+        label="Link"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid link."
         onInput={inputHandler}
       />
       <Button type="submit" disabled={!formState.isValid}>
