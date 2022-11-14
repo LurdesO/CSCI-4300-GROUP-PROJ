@@ -11,32 +11,34 @@ import {
 import { useForm } from '../../shared/hooks/form-hook';
 import './PlaceForm.css';
 
-const DUMMY_PLACES = [
+const RESOURCES = [
   {
     id: 'p1',
-    title: 'University of Georgia',
-    description: 'From Ideas to Innovation!',
+    title: 'Food Bank of Northeast Georgia',
+    description: 'We envision a community in which no neighbor experiences hunger.',
     imageUrl:
-      'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/athens/uga-arch-large-web0-cac931605056a36_cac93607-5056-a36a-0af166f0d7ed4058.jpg',
-    address: 'University of Georgia, Athens, GA 30602',
+      'https://foodbanknega.org/wp-content/uploads/2022/02/main-logo-1.png',
+    address: '861 Newton Bridge Rd Athens, GA 30607',
     location: {
-      lat: 40.7484405,
-      lng: -73.9878584
+      lat: 34.0024821,
+      lng: -83.4013562
     },
+    link: 'https://foodbanknega.org/',
     creator: 'u1'
   },
   {
     id: 'p2',
-    title: 'University of Georgia',
-    description: 'From Ideas to Innovation!',
+    title: 'Athens Area Emergency Food Bank',
+    description: 'Serving our Community Since 1980',
     imageUrl:
-      'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/athens/uga-arch-large-web0-cac931605056a36_cac93607-5056-a36a-0af166f0d7ed4058.jpg',
-    address: 'University of Georgia, Athens, GA 30602',
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    address: '440 Barber Street Athens, Georgia 30601',
     location: {
-      lat: 40.7484405,
-      lng: -73.9878584
+      lat: 33.9688268,
+      lng: -83.3863892
     },
-    creator: 'u2'
+    link: 'http://athensfoodbank.org/',
+    creator: 'u1'
   }
 ];
 
@@ -53,12 +55,20 @@ const UpdatePlace = () => {
       description: {
         value: '',
         isValid: false
+      },
+      address: {
+        value: '',
+        isValid: false
+      },
+      link: {
+        value: '',
+        isValid: false
       }
     },
     false
   );
 
-  const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId);
+  const identifiedPlace = RESOURCES.find(p => p.id === placeId);
 
   useEffect(() => {
     if (identifiedPlace) {
@@ -70,6 +80,14 @@ const UpdatePlace = () => {
           },
           description: {
             value: identifiedPlace.description,
+            isValid: true
+          },
+          address: {
+            value: identifiedPlace.address,
+            isValid: true
+          },
+          link: {
+            value: identifiedPlace.link,
             isValid: true
           }
         },
@@ -124,6 +142,26 @@ const UpdatePlace = () => {
         onInput={inputHandler}
         initialValue={formState.inputs.description.value}
         initialValid={formState.inputs.description.isValid}
+      />
+      <Input
+        id="address"
+        element="input"
+        label="Address"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid address."
+        onInput={inputHandler}
+        initialValue={formState.inputs.address.value}
+        initialValid={formState.inputs.address.isValid}
+      />
+      <Input
+        id="link"
+        element="input"
+        label="Link"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid link."
+        onInput={inputHandler}
+        initialValue={formState.inputs.link.value}
+        initialValid={formState.inputs.link.isValid}
       />
       <Button type="submit" disabled={!formState.isValid}>
         UPDATE PLACE
