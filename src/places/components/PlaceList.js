@@ -10,7 +10,7 @@ const PlaceList = props => {
     return (
       <div className="place-list center">
         <Card>
-          <h2>No places found. Maybe create one?</h2>
+          <h2>No local resources found. Maybe add one?</h2>
           <Button to="/places/new">Share Place</Button>
         </Card>
       </div>
@@ -27,6 +27,7 @@ const PlaceList = props => {
           title={place.title}
           description={place.description}
           address={place.address}
+          link={place.link}
           creatorId={place.creator}
           coordinates={place.location}
         />
