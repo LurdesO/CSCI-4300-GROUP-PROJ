@@ -14,19 +14,19 @@ const Users = () => {
       id: 'u2',
       name: 'Local Shelters',
       image:
-      'shelter.png',
+      'home.png',
     },
      {
       id: 'u3',
       name: 'Weather',
       image:
-      'weather.png',
+      'rainy-day.png',
     },
      {
       id: 'u4',
       name: 'Mental Health Resources',
       image:
-      'mental.png',
+      'mental-health.png',
     },
   ];
 
