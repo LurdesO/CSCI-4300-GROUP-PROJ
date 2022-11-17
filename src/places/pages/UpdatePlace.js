@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
@@ -40,11 +41,13 @@ const RESOURCES = [
     link: 'http://athensfoodbank.org/',
     creator: 'u1'
   }
+  
 ];
 
 const UpdatePlace = () => {
   const [isLoading, setIsLoading] = useState(true);
   const placeId = useParams().placeId;
+  const history = useHistory();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -100,7 +103,17 @@ const UpdatePlace = () => {
   const placeUpdateSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
+    fetch('/u1/places/', {
+      method: 'POST',
+      headers: {"Content-Type": "apllication/json"},
+      body: JSON.stringify(formState.inputs)
+    }).then(() => {
+      console.log('new place added');
+      setIsLoading(false);
+      history.push('/u1/places');
+    })
   };
+  
 
   if (!identifiedPlace) {
     return (

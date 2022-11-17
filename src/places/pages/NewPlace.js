@@ -7,9 +7,13 @@ import {
   VALIDATOR_MINLENGTH
 } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './PlaceForm.css';
 
 const NewPlace = () => {
+  const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
   const [formState, inputHandler] = useForm(
     {
       title: {
@@ -31,10 +35,19 @@ const NewPlace = () => {
     },
     false
   );
-
   const placeSubmitHandler = event => {
     event.preventDefault();
+    setIsPending(true);
     console.log(formState.inputs);
+    fetch('/u2/places', {
+      method: 'POST',
+      headers: {"Content-Type": "apllication/json"},
+      body: JSON.stringify(formState.inputs)
+    }).then(() => {
+      console.log('new place added');
+      setIsPending(false);
+      history.push('/u2/places');
+    })
   };
 
   return (
@@ -72,9 +85,12 @@ const NewPlace = () => {
         errorText="Please enter a valid link."
         onInput={inputHandler}
       />
-      <Button type="submit" disabled={!formState.isValid}>
+      {!isPending && <Button onClick = {inputHandler} type="submit" disabled={!formState.isValid}>
         ADD PLACE
-      </Button>
+      </Button>}
+      {isPending && <Button onClick = {inputHandler} type="submit" disabled={!formState.isValid}>
+        ADDING PLACE...
+      </Button>}
     </form>
   );
 };

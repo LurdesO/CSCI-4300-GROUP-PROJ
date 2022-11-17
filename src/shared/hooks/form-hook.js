@@ -1,4 +1,4 @@
-import { useCallback, useReducer } from 'react';
+import { useCallback, useReducer, useState } from 'react';
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -55,5 +55,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
     });
   }, []);
 
-  return [formState, inputHandler, setFormData];
+  return [formState, inputHandler, setFormData, useState];
 };
+
+export default useState;
