@@ -103,7 +103,7 @@ const UpdatePlace = () => {
   const placeUpdateSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
-    fetch('/u1/places/', {
+    fetch('/u1/places', {
       method: 'POST',
       headers: {"Content-Type": "apllication/json"},
       body: JSON.stringify(formState.inputs)

@@ -14,21 +14,21 @@ const Users = () => {
       id: 'u2',
       name: 'Local Shelters',
       image:
-      'home.png',
+      'shelter.png',
     },
      {
       id: 'u3',
       name: 'Weather',
       image:
-      'rainy-day.png',
+      'weather.png',
     },
      {
       id: 'u4',
       name: 'Mental Health Resources',
       image:
-      'mental-health.png',
+      'mental.png',
     },
-  ];
+  ]
 
   return <UsersList items={USERS} />;
 };
