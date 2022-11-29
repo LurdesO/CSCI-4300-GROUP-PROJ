@@ -45,7 +45,7 @@ const RESOURCES = [
 ];
 
 const UpdatePlace = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsPending] = useState(true);
   const placeId = useParams().placeId;
   const history = useHistory();
 
@@ -97,22 +97,24 @@ const UpdatePlace = () => {
         true
       );
     }
-    setIsLoading(false);
+    setIsPending(false);
   }, [setFormData, identifiedPlace]);
 
   const placeUpdateSubmitHandler = event => {
     event.preventDefault();
+    setIsPending(true);
     console.log(formState.inputs);
-    fetch('/u1/places', {
+    fetch('/places/new', {
       method: 'POST',
       headers: {"Content-Type": "apllication/json"},
       body: JSON.stringify(formState.inputs)
     }).then(() => {
       console.log('new place added');
-      setIsLoading(false);
+      setIsPending(false);
       history.push('/u1/places');
     })
   };
+
   
 
   if (!identifiedPlace) {

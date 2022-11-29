@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 const HttpError = require('../models/http-error');
 const Place = require('../models/place');
 
-const RESOURCES = [
+let RESOURCES = [
   {
     id: 'p1',
     title: 'Food Bank of Northeast Georgia',

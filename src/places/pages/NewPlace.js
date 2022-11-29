@@ -39,14 +39,14 @@ const NewPlace = () => {
     event.preventDefault();
     setIsPending(true);
     console.log(formState.inputs);
-    fetch('/u2/places', {
+    fetch('/places/new', {
       method: 'POST',
       headers: {"Content-Type": "apllication/json"},
       body: JSON.stringify(formState.inputs)
     }).then(() => {
       console.log('new place added');
       setIsPending(false);
-      history.push('/u2/places');
+      history.push('/u1/places');
     })
   };
 
