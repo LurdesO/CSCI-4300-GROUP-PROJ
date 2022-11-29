@@ -66,6 +66,10 @@ const UpdatePlace = () => {
       link: {
         value: '',
         isValid: false
+      },
+      imageUrl: {
+        value: '',
+        isValid: false
       }
     },
     false
@@ -91,6 +95,10 @@ const UpdatePlace = () => {
           },
           link: {
             value: identifiedPlace.link,
+            isValid: true
+          },
+          imageUrl: {
+            value: identifiedPlace.imageUrl,
             isValid: true
           }
         },
@@ -177,6 +185,16 @@ const UpdatePlace = () => {
         onInput={inputHandler}
         initialValue={formState.inputs.link.value}
         initialValid={formState.inputs.link.isValid}
+      />
+      <Input
+        id="imageUrl"
+        element="imageUrl"
+        label="Image URL"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid image URL."
+        onInput={inputHandler}
+        initialValue={formState.inputs.imageUrl.value}
+        initialValid={formState.inputs.imageUrl.isValid}
       />
       <Button type="submit" disabled={!formState.isValid}>
         UPDATE PLACE
