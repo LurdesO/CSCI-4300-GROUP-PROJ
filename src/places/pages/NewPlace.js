@@ -31,6 +31,10 @@ const NewPlace = () => {
       link: {
         value: '',
         isValid: false
+      },
+      imageUrl: {
+        value: '',
+        isValid: false
       }
     },
     false
@@ -83,6 +87,14 @@ const NewPlace = () => {
         label="Link"
         validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid link."
+        onInput={inputHandler}
+      />
+      <Input
+        id="imageUrl"
+        element="input"
+        label="Image URL"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid image URL."
         onInput={inputHandler}
       />
       {!isPending && <Button onClick = {inputHandler} type="submit" disabled={!formState.isValid}>
