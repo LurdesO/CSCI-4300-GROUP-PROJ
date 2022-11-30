@@ -25,7 +25,7 @@ router.post(
 );
 
 router.patch(
-  '/:places/new',
+  '/:pid',
   [
     check('title')
       .not()
@@ -35,6 +35,6 @@ router.patch(
   placesControllers.updatePlace
 );
 
-router.delete('/', placesControllers.deletePlace);
+router.delete('/:pid', placesControllers.deletePlace);
 
 module.exports = router;

@@ -39,7 +39,7 @@ const NewPlace = () => {
     },
     false
   );
-  const placeUpdateSubmitHandler = event => {
+  /*const placeUpdateSubmitHandler = event => {
     event.preventDefault();
     setIsPending(true);
     console.log(formState.inputs);
@@ -53,9 +53,15 @@ const NewPlace = () => {
       history.push('/u1/places');
     })
   };
+**/
+const placeSubmitHandler = event => {
+  event.preventDefault();
+  console.log(formState.inputs);
+  history.push('/places');
+}
 
   return (
-    <form action ="http://localhost:3000/u1/places" method ="POST" className="place-form">
+    <form className="place-form" onSubmit={placeSubmitHandler}>
       <Input
         id="title"
         name= "title"

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -39,6 +39,9 @@ export default function App() {
           <Users1 />
         </Route>
         <Route path="/:userId/places" exact>
+          <UserPlaces />
+        </Route>
+        <Route path="/places" exact>
           <UserPlaces />
         </Route>
         <Route path="/places/new" exact>

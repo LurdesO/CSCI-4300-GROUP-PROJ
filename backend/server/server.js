@@ -10,7 +10,7 @@ const app = express();
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 app.use(bodyParser.json(), urlencodedParser)
 
-const URI = 'mongodb+srv://Lalo1946:test1234@projcluster.kpw8iqv.mongodb.net/?retryWrites=true&w=majority'
+const URI = 'mongodb+srv://Lalo1946:Deadman1234@cluster0.ldjm84a.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then((res) => {

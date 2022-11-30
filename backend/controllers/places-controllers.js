@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 const HttpError = require('../models/http-error');
 const Place = require('../models/place');
 
-let RESOURCES = [
+/*let RESOURCES = [
   {
     id: 'p1',
     title: 'Food Bank of Northeast Georgia',
@@ -34,12 +34,10 @@ let RESOURCES = [
     creator: 'u1'
   }
 ];
-
+*/
 
 const getPlaceById = async (req, res, next) => {
-  const placeId = req.params.pid; // { pid: 'p1' }
-  // const place = DUMMY_PLACES.find(p => {
-  //   return p.id === placeId;
+  const placeId = req.params.pid;
   let place;
   try {
     place = await Place.findById(placeId);
@@ -62,8 +60,6 @@ const getPlaceById = async (req, res, next) => {
   res.json({ place: place.toObject({ getters: true }) }); // => { place } => { place: place }
 };
 
-// function getPlaceById() { ... }
-// const getPlaceById = function() { ... }
 
 const getPlacesByUserId = async (req, res, next) => {
   const userId = req.params.uid;

@@ -162,7 +162,7 @@ const UpdatePlace = () => {
     setIsPending(false);
   }, [setFormData, identifiedPlace]);
 
-  const placeUpdateSubmitHandler = event => {
+  /*const placeUpdateSubmitHandler = event => {
     event.preventDefault();
     setIsPending(true);
     console.log(formState.inputs);
@@ -176,8 +176,12 @@ const UpdatePlace = () => {
       history.push('/u1/places');
     })
   };
-
-  
+**/
+const placeSubmitHandler = event => {
+  event.preventDefault();
+  console.log(formState.inputs);
+  history.push('/');
+}
 
   if (!identifiedPlace) {
     return (
@@ -198,7 +202,7 @@ const UpdatePlace = () => {
   }
 
   return (
-    <form className="place-form" >
+    <form className="place-form" onSubmit={placeSubmitHandler}>
       <Input
         id="title"
         element="input"
@@ -230,7 +234,7 @@ const UpdatePlace = () => {
         initialValue={formState.inputs.address.value}
         initialValid={formState.inputs.address.isValid}
       />
-            <Input
+      <Input
         id="imageUrl"
         element="input"
         label="Image Url"
@@ -250,7 +254,7 @@ const UpdatePlace = () => {
         initialValue={formState.inputs.link.value}
         initialValid={formState.inputs.link.isValid}
       />
-      <Button type="submit" disabled={!formState.isValid}>
+      <Button type="submit" disabled={!formState.isValid} >
         UPDATE PLACE
       </Button>
     </form>

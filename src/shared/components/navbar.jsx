@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {useHistory, Link } from 'react-router-dom' 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import React from 'react'
 export function Navbar() {
     const history = useHistory()
     const [username, setUsername] = useState(null)

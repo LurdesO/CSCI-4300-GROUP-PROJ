@@ -1,6 +1,7 @@
-/* eslint-disable react/react-in-jsx-scope */
+
 import { useHistory } from 'react-router' 
 import { useEffect } from 'react'
+import React from 'react'
 export function Register() {
     const history = useHistory()
 
