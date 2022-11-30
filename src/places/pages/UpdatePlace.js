@@ -42,35 +42,7 @@ const RESOURCES = [
     creator: 'u1'
   },
   {
-    id: 'p2',
-    title: 'Athens Area Emergency Food Bank',
-    description: 'Serving our Community Since 1980',
-    imageUrl:
-      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
-    address: '440 Barber Street Athens, Georgia 30601',
-    location: {
-      lat: 33.9688268,
-      lng: -83.3863892
-    },
-    link: 'http://athensfoodbank.org/',
-    creator: 'u2'
-  },
-  {
-    id: 'p2',
-    title: 'Athens Area Emergency Food Bank',
-    description: 'Serving our Community Since 1980',
-    imageUrl:
-      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
-    address: '440 Barber Street Athens, Georgia 30601',
-    location: {
-      lat: 33.9688268,
-      lng: -83.3863892
-    },
-    link: 'http://athensfoodbank.org/',
-    creator: 'u2'
-  },
-  {
-    id: 'p2',
+    id: 'p3',
     title: 'Weather',
     description: 'See the hourly forecast in Athens!',
     imageUrl:
@@ -79,7 +51,7 @@ const RESOURCES = [
     creator: 'u3'
   },
   {
-    id: 'p2',
+    id: 'p4',
     title: 'LifeStance Health',
     description: 'Our team works to provide mental health treatments to those suffering from a variety of mental health disorders.',
     imageUrl:
@@ -89,7 +61,7 @@ const RESOURCES = [
     creator: 'u4'
   },
   {
-    id: 'p2',
+    id: 'p5',
     title: 'Advantage Behavioral Health System',
     description: 'Where Health Meets Hope',
     imageUrl:
@@ -97,6 +69,46 @@ const RESOURCES = [
     address: '240 Mitchell Bridge Rd, Athens, GA 30606',
     link: 'https://www.advantagebhs.org/',
     creator: 'u4'
+  },
+  {
+    id: 'p6',
+    title: 'Athens Area Homeless Shelter',
+    description: 'Provides collaborative, comprehensive services to homeless individuals and families working toward sustainable independence.',
+    imageUrl:
+      'https://static.wixstatic.com/media/5d2d98_ab5a7cbba3a14c69a52c48b66fbf95bd~mv2_d_2375_1575_s_2.jpg/v1/fit/w_2500,h_1330,al_c/5d2d98_ab5a7cbba3a14c69a52c48b66fbf95bd~mv2_d_2375_1575_s_2.jpg',
+    address: '620 Barber St, Athens, GA 30601',
+    location: {
+      lat: 33.968815,
+      lng: -83.386057
+    },
+    link: 'https://www.helpathenshomeless.org/',
+    creator: 'u2'
+  },
+  {
+    id: 'p7',
+    title: 'The Weather Channel',
+    description: 'Check Athens Weather',
+    imageUrl: 'https://i.ytimg.com/vi/hLSWIZEC60A/maxresdefault.jpg',
+    address: 'Athens, Georgia',
+    location: {
+      lat: 33.9519,
+      lng: -83.3576
+    },
+    link: 'https://weather.com/weather/tenday/l/Athens+GA?canonicalCityId=ec47691d8d26b58c5ab89414e5263d4b7ec69a681fc5feb9bc2955aaa0b2e2f7',
+    creator: 'u3'
+  },
+  {
+    id: 'p8',
+    title: 'National Weather Service',
+    description: 'Check for any Hazardous Weather Conditions in Athens.',
+    imageUrl: 'https://kicd-am.sagacom.com/files/2016/10/National-Weather-Service-DL-1200x768.jpg',
+    address: 'Athens, GA',
+    location: { 
+      lat: 33.9519,
+      lng: -83.3576
+    },
+    link: 'https://forecast.weather.gov/MapClick.php?lat=33.9582&lon=-83.3731#.Y4ar3ezMK3I',
+    creator: 'u3'
   }
 ];
 
