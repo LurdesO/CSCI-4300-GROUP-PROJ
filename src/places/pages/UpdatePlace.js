@@ -40,8 +40,64 @@ const RESOURCES = [
     },
     link: 'http://athensfoodbank.org/',
     creator: 'u1'
+  },
+  {
+    id: 'p2',
+    title: 'Athens Area Emergency Food Bank',
+    description: 'Serving our Community Since 1980',
+    imageUrl:
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    address: '440 Barber Street Athens, Georgia 30601',
+    location: {
+      lat: 33.9688268,
+      lng: -83.3863892
+    },
+    link: 'http://athensfoodbank.org/',
+    creator: 'u2'
+  },
+  {
+    id: 'p2',
+    title: 'Athens Area Emergency Food Bank',
+    description: 'Serving our Community Since 1980',
+    imageUrl:
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    address: '440 Barber Street Athens, Georgia 30601',
+    location: {
+      lat: 33.9688268,
+      lng: -83.3863892
+    },
+    link: 'http://athensfoodbank.org/',
+    creator: 'u2'
+  },
+  {
+    id: 'p2',
+    title: 'Weather',
+    description: 'See the hourly forecast in Athens!',
+    imageUrl:
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    link: 'https://weather.com/weather/hourbyhour/l/00937b933429ee97511efe27724dec86a7e3e692232b8aeee9fcabb550664168',
+    creator: 'u3'
+  },
+  {
+    id: 'p2',
+    title: 'LifeStance Health',
+    description: 'Our team works to provide mental health treatments to those suffering from a variety of mental health disorders.',
+    imageUrl:
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    address: '745 S Milledge Ave Suite 1A Athens, GA 30605',
+    link: 'https://www.mygbhp.com/location/athens-ga/?utm_source=gmb&utm_medium=organic&utm_campaign=locations',
+    creator: 'u4'
+  },
+  {
+    id: 'p2',
+    title: 'Advantage Behavioral Health System',
+    description: 'Where Health Meets Hope',
+    imageUrl:
+      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    address: '240 Mitchell Bridge Rd, Athens, GA 30606',
+    link: 'https://www.advantagebhs.org/',
+    creator: 'u4'
   }
-  
 ];
 
 const UpdatePlace = () => {
