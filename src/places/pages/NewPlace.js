@@ -24,6 +24,10 @@ const NewPlace = () => {
         value: '',
         isValid: false
       },
+      imageUrl: {
+        value: '',
+        isValid: false
+      },
       address: {
         value: '',
         isValid: false
@@ -35,25 +39,12 @@ const NewPlace = () => {
     },
     false
   );
-  const placeSubmitHandler = event => {
-    event.preventDefault();
-    setIsPending(true);
-    console.log(formState.inputs);
-    fetch('/places/new', {
-      method: 'POST',
-      headers: {"Content-Type": "apllication/json"},
-      body: JSON.stringify(formState.inputs)
-    }).then(() => {
-      console.log('new place added');
-      setIsPending(false);
-      history.push('/u1/places');
-    })
-  };
 
   return (
-    <form className="place-form" onSubmit={placeSubmitHandler}>
+    <form action ="http://localhost:3000/u1/places" method ="POST" className="place-form">
       <Input
         id="title"
+        name= "title"
         element="input"
         type="text"
         label="Title"
@@ -64,14 +55,25 @@ const NewPlace = () => {
       <Input
         id="description"
         element="textarea"
+        name="description"
         label="Description"
         validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="Please enter a valid description (at least 5 characters)."
         onInput={inputHandler}
       />
       <Input
+        id="imageUrl"
+        element="input"
+        name="image"
+        label="Image Url"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid image adress."
+        onInput={inputHandler}
+      />
+      <Input
         id="address"
         element="input"
+        name="adress"
         label="Address"
         validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid address."
@@ -80,6 +82,7 @@ const NewPlace = () => {
       <Input
         id="link"
         element="input"
+        name="creator"
         label="Link"
         validators={[VALIDATOR_REQUIRE()]}
         errorText="Please enter a valid link."

@@ -6,15 +6,18 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Users from './user/pages/Users';
+import Users1 from './user/pages/Users1';
 import NewPlace from './places/pages/NewPlace';
 import UserPlaces from './places/pages/UserPlaces';
 import UpdatePlace from './places/pages/UpdatePlace';
 import Auth from './user/pages/Auth';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import { AuthContext } from './shared/context/auth-context';
+import { Register} from './shared/components/register';
+import { Login } from './shared/components/login';
+//import { Profile } from './components/profile'
 
-const App = () => {
+export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const login = useCallback(() => {
@@ -30,8 +33,10 @@ const App = () => {
   if (isLoggedIn) {
     routes = (
       <Switch>
+        <Route component={Register} exact path="/register" />
+        <Route component={Login} exact path = "/login" />
         <Route path="/" exact>
-          <Users />
+          <Users1 />
         </Route>
         <Route path="/:userId/places" exact>
           <UserPlaces />
@@ -48,8 +53,10 @@ const App = () => {
   } else {
     routes = (
       <Switch>
+        <Route component={Register} exact path="/register" />
+        <Route component={Login} exact path = "/login" />
         <Route path="/" exact>
-          <Users />
+          <Users1 />
         </Route>
         <Route path="/:userId/places" exact>
           <UserPlaces />
@@ -73,5 +80,3 @@ const App = () => {
     </AuthContext.Provider>
   );
 };
-
-export default App;

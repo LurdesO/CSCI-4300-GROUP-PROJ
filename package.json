@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "http-errors": "^2.0.0",
+    "mongodb": "^4.12.1",
     "mongoose": "^6.7.4",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

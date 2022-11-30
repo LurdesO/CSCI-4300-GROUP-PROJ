@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
@@ -47,7 +47,7 @@ const RESOURCES = [
 const UpdatePlace = () => {
   const [isLoading, setIsPending] = useState(true);
   const placeId = useParams().placeId;
-  const history = useHistory();
+  //const history = useHistory();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -56,6 +56,10 @@ const UpdatePlace = () => {
         isValid: false
       },
       description: {
+        value: '',
+        isValid: false
+      },
+      imageUrl: {
         value: '',
         isValid: false
       },
@@ -85,6 +89,10 @@ const UpdatePlace = () => {
             value: identifiedPlace.description,
             isValid: true
           },
+          imageUrl: {
+            value: identifiedPlace.imageUrl,
+            isValid: true
+          },
           address: {
             value: identifiedPlace.address,
             isValid: true
@@ -100,11 +108,11 @@ const UpdatePlace = () => {
     setIsPending(false);
   }, [setFormData, identifiedPlace]);
 
-  const placeUpdateSubmitHandler = event => {
+  /*const placeUpdateSubmitHandler = event => {
     event.preventDefault();
     setIsPending(true);
     console.log(formState.inputs);
-    fetch('/places/new', {
+    fetch('/places/p1', {
       method: 'POST',
       headers: {"Content-Type": "apllication/json"},
       body: JSON.stringify(formState.inputs)
@@ -114,7 +122,7 @@ const UpdatePlace = () => {
       history.push('/u1/places');
     })
   };
-
+**/
   
 
   if (!identifiedPlace) {
@@ -136,7 +144,7 @@ const UpdatePlace = () => {
   }
 
   return (
-    <form className="place-form" onSubmit={placeUpdateSubmitHandler}>
+    <form className="place-form" >
       <Input
         id="title"
         element="input"
@@ -167,6 +175,16 @@ const UpdatePlace = () => {
         onInput={inputHandler}
         initialValue={formState.inputs.address.value}
         initialValid={formState.inputs.address.isValid}
+      />
+            <Input
+        id="imageUrl"
+        element="input"
+        label="Image Url"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid image Url."
+        onInput={inputHandler}
+        initialValue={formState.inputs.link.value}
+        initialValid={formState.inputs.link.isValid}
       />
       <Input
         id="link"
