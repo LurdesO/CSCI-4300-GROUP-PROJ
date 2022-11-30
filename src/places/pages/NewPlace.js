@@ -35,10 +35,24 @@ const NewPlace = () => {
       link: {
         value: '',
         isValid: false
-      }
+      },
     },
     false
   );
+  const placeUpdateSubmitHandler = event => {
+    event.preventDefault();
+    setIsPending(true);
+    console.log(formState.inputs);
+    fetch('/places/p1', {
+      method: 'POST',
+      headers: {"Content-Type": "apllication/json"},
+      body: JSON.stringify(formState.inputs)
+    }).then(() => {
+      console.log('new place added');
+      setIsPending(false);
+      history.push('/u1/places');
+    })
+  };
 
   return (
     <form action ="http://localhost:3000/u1/places" method ="POST" className="place-form">

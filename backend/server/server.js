@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 const User = require("./models/users");
-const { use } = require('../routes/places-routes');
 
 const app = express();
 
