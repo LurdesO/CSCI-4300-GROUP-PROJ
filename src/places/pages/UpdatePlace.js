@@ -13,7 +13,7 @@ import { useForm } from '../../shared/hooks/form-hook';
 import './PlaceForm.css';
 
 const RESOURCES = [
-  {
+{
     id: 'p1',
     title: 'Food Bank of Northeast Georgia',
     description: 'We envision a community in which no neighbor experiences hunger.',
@@ -46,7 +46,7 @@ const RESOURCES = [
     title: 'Weather',
     description: 'See the hourly forecast in Athens!',
     imageUrl:
-      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+      'https://i.ytimg.com/vi/hLSWIZEC60A/maxresdefault.jpg',
     link: 'https://weather.com/weather/hourbyhour/l/00937b933429ee97511efe27724dec86a7e3e692232b8aeee9fcabb550664168',
     creator: 'u3'
   },
@@ -54,8 +54,7 @@ const RESOURCES = [
     id: 'p4',
     title: 'LifeStance Health',
     description: 'Our team works to provide mental health treatments to those suffering from a variety of mental health disorders.',
-    imageUrl:
-      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+    imageUrl: 'https://assets-global.website-files.com/5cb5162c145f7c1a41cbdb88/5ee2a0bf7b5061e669043fc9_lifestance%402x.jpg',
     address: '745 S Milledge Ave Suite 1A Athens, GA 30605',
     link: 'https://www.mygbhp.com/location/athens-ga/?utm_source=gmb&utm_medium=organic&utm_campaign=locations',
     creator: 'u4'
@@ -65,7 +64,7 @@ const RESOURCES = [
     title: 'Advantage Behavioral Health System',
     description: 'Where Health Meets Hope',
     imageUrl:
-      'https://images.squarespace-cdn.com/content/v1/5555fc00e4b0e3eb2ced1494/1544108035891-71C0XP0I804ZJA9TQDOP/emergency+food+bank.jpeg?format=300w',
+      'http://www.advantagebhs.org/__static/a7f3ba59604e9934b809ca21cfbc0b00/advantage-1-design.png',
     address: '240 Mitchell Bridge Rd, Athens, GA 30606',
     link: 'https://www.advantagebhs.org/',
     creator: 'u4'
@@ -86,19 +85,6 @@ const RESOURCES = [
   },
   {
     id: 'p7',
-    title: 'The Weather Channel',
-    description: 'Check Athens Weather',
-    imageUrl: 'https://i.ytimg.com/vi/hLSWIZEC60A/maxresdefault.jpg',
-    address: 'Athens, Georgia',
-    location: {
-      lat: 33.9519,
-      lng: -83.3576
-    },
-    link: 'https://weather.com/weather/tenday/l/Athens+GA?canonicalCityId=ec47691d8d26b58c5ab89414e5263d4b7ec69a681fc5feb9bc2955aaa0b2e2f7',
-    creator: 'u3'
-  },
-  {
-    id: 'p8',
     title: 'National Weather Service',
     description: 'Check for any Hazardous Weather Conditions in Athens.',
     imageUrl: 'https://kicd-am.sagacom.com/files/2016/10/National-Weather-Service-DL-1200x768.jpg',
