@@ -95,4 +95,11 @@ const UserPlaces = () => {
   return <PlaceList items={loadedPlaces} />;
 };
 
+
+/*const PlacesId= () => {
+  const placeId = useParams().placesId;
+  const loadedPlaces = RESOURCES.filter(placeID => placeID.id === placeId);
+  return <PlaceList items={loadedPlaces} />;
+};
+**/
 export default UserPlaces;

@@ -56,10 +56,17 @@ const NewPlace = () => {
 **/
 const placeSubmitHandler = event => {
   event.preventDefault();
+  
+fetch('/', {
+  method: 'POST',
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formState.inputs)
+}).then(() => {
+  console.log('new place added');
+  history.push('/');
   console.log(formState.inputs);
-  history.push('/places');
+})
 }
-
   return (
     <form className="place-form" onSubmit={placeSubmitHandler}>
       <Input

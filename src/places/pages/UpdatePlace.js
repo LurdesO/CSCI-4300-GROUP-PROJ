@@ -102,7 +102,6 @@ const UpdatePlace = () => {
   const [isLoading, setIsPending] = useState(true);
   const placeId = useParams().placeId;
   const history = useHistory();
-
   const [formState, inputHandler, setFormData] = useForm(
     {
       title: {
@@ -177,10 +176,19 @@ const UpdatePlace = () => {
     })
   };
 **/
+
 const placeSubmitHandler = event => {
   event.preventDefault();
-  console.log(formState.inputs);
+  
+fetch('/u1/places/', {
+  method: 'POST',
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formState.inputs)
+}).then(() => {
+  console.log('new place added');
   history.push('/');
+  console.log(formState.inputs);
+})
 }
 
   if (!identifiedPlace) {

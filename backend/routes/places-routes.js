@@ -6,7 +6,7 @@ const { check } = require('express-validator');
 
 const router = express.Router();
 
-router.get('/:pid', placesControllers.getPlaceById);
+router.get('/places/:pid', placesControllers.getPlaceById);
 
 router.get('/user/:uid', placesControllers.getPlacesByUserId);
 
@@ -25,7 +25,7 @@ router.post(
 );
 
 router.patch(
-  '/:pid',
+  '/places/:pid',
   [
     check('title')
       .not()
@@ -35,6 +35,6 @@ router.patch(
   placesControllers.updatePlace
 );
 
-router.delete('/:pid', placesControllers.deletePlace);
+router.delete('/places/:pid', placesControllers.deletePlace);
 
 module.exports = router;
